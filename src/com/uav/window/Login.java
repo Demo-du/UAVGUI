@@ -22,7 +22,7 @@ public class Login extends JPanel{
 		add(c,con);
 	}
 	public Login(){
-		JFrame jf=new JFrame("Login");
+		final JFrame jf=new JFrame("Login");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout lay=new GridBagLayout();
 		setLayout(lay);
@@ -46,7 +46,7 @@ public class Login extends JPanel{
 		constaints.fill=GridBagConstraints.NONE;
 		constaints.anchor=GridBagConstraints.CENTER;
 		constaints.weightx=300;
-		constaints.weighty=400;
+		constaints.weighty=150;
 		add(name,constaints,70,100,80,80);
 		add(password,constaints,70,200,80,80);
 		add(nameinput,constaints,320,100,40,80);
@@ -60,7 +60,20 @@ public class Login extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				System.out.println("sssss");
+				//System.out.println("sssss");
+				jf.dispose();
+				new Show();
+			}
+			
+		});
+		b2.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//System.out.println("sssss");
+				jf.dispose();
+				//new Show();
 			}
 			
 		});
