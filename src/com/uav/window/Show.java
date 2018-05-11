@@ -7,13 +7,18 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class Show extends JPanel{
+	public String str="";
+	public static JTextArea tx;
 	public static int WIDTH=600;
 	public static int HEIGHT=400;
 	public void add(Component c,GridBagConstraints con,int x,int y,int w,int h){
@@ -38,10 +43,10 @@ public class Show extends JPanel{
 		int y=(height-HEIGHT)/2;
 		jf.setLocation(x, y);
 		//===============================================================//
-		JButton b1=new JButton("仿真选择");
+		JButton b1=new JButton("仿 真 选 择");
 		//b1.setBackground(Color.CYAN);
 		//b1.setBounds(0,50,300,200);
-		b1.setPreferredSize(new Dimension(150,100));
+		//b1.setPreferredSize(new Dimension(150,100));
 		JButton b2=new JButton("协同侦查开始");
 		JButton b3=new JButton("协同侦查暂停");
 		JButton b4=new JButton("兵力分配开始");
@@ -50,6 +55,8 @@ public class Show extends JPanel{
 		JLabel tab1=new JLabel("基本配置");
 		tab1.setBackground(Color.blue);
 		JLabel tab2=new JLabel("仿真实验");
+		tx=new JTextArea(10,80);
+		tx.setBackground(Color.GREEN);
 		GridBagConstraints constaints=new GridBagConstraints();
 		constaints.fill=GridBagConstraints.NONE;
 		constaints.anchor=GridBagConstraints.CENTER;
@@ -63,8 +70,22 @@ public class Show extends JPanel{
 		add(b4,constaints,0,500,300,100);
 		add(b5,constaints,0,600,300,100);
 		add(b6,constaints,0,700,300,100);
+		add(tx,constaints,300,600,900,200);
+		
 		//===============================================================//
 		jf.setResizable(false);
 		jf.setVisible(true);
+		//===============================================================//
+		b1.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//System.out.println("sssss");
+				str+='\n'+"ss";
+				tx.setText(str);
+			}
+			
+		});
     }
 }
