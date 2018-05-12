@@ -80,10 +80,9 @@ public class Show extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				//System.out.println("sssss");
-				str+='\n'+"ss";
-				tx.setText(str);
+				//str+='\n'+"ss";
+				//tx.setText(str);
+				new Choose1();
 			}
 			
 		});
