@@ -67,6 +67,7 @@ public class Choose1 extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				//System.out.println("sssss");
+				new Bingli();
 				jf.dispose();
 			}
 			
