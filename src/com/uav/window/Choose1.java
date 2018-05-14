@@ -57,6 +57,7 @@ public class Choose1 extends JPanel{
 				// TODO Auto-generated method stub
 				//System.out.println("sssss");
 				jf.dispose();
+				new Zhencha();
 			}
 			
 		});
