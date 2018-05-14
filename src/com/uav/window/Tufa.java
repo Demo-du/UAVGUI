@@ -7,6 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -34,6 +35,9 @@ public class Tufa extends JPanel{
 		int x=(width-WIDTH)/2;
 		int y=(height-HEIGHT)/2;
 		jf.setLocation(x, y);
+		//========================================//
+		JButton b1=new JButton("确定");
+		JButton b2=new JButton("取消");
 		//========================================//
 		jf.setResizable(false);
 		jf.setVisible(true);
