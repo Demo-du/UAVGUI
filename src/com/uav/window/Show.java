@@ -86,5 +86,16 @@ public class Show extends JPanel{
 			}
 			
 		});
+		b6.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//str+='\n'+"ss";
+				//tx.setText(str);
+				new Tufa();
+				//new Choose1();
+			}
+			
+		});
     }
 }
