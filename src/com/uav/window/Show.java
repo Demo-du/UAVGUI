@@ -86,6 +86,24 @@ public class Show extends JPanel{
 			}
 			
 		});
+		b2.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				str="侦查任务规划仿真开始==========================";
+				str+='\n'+"分配方案为";
+				str+='\n'+"UAV1 传感器类型：红外传感器，侦查路线：0-8-9-10-0";
+				str+='\n'+"UAV2 传感器类型：摄像头传感器，侦查路线：0-1-2-3-4-11-0";
+				str+='\n'+"UAV3 传感器类型：摄像头传感器，侦查路线：0-6-5-0";
+				str+='\n'+"UAV4 传感器类型：红外传感器，侦查路线：0-12-0";
+				str+='\n'+"突发情况：无";
+				str+='\n'+"侦查任务规划仿真结束==========================";
+				//str+='\n'+"ss";
+				tx.setText(str);
+				//new Choose1();
+			}
+			
+		});
 		b6.addActionListener(new ActionListener(){
 
 			@Override
