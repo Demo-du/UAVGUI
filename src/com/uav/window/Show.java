@@ -4,12 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,6 +27,39 @@ public class Show extends JPanel{
 	public static JTextArea tx;
 	public static int WIDTH=600;
 	public static int HEIGHT=400;
+	public static int dx=150;
+	public static int dy=100;
+	public static BufferedImage background; //背景图片  
+	public static BufferedImage bigplane; //飞机图片
+	//静态块，在类加载到方法区时执行一次，专门加载静态资源  
+    static{  
+        /* 
+         * java从硬盘中加载图片到内存中： 
+         * ImageIO.read方法：专门从硬盘中加载图片的静态方法 
+         * 不用实例化，直接调用 
+         * ShootGame.class:获得当前类的加载器所在路径 
+         * ShootGame.class.getRerource("文件名"); 从当前类所在路径加载指定文件到程序中 
+         */  
+      /*  try {  
+            background = ImageIO.read(new File("/home/dujianjian/blog/background.png"));  
+            bigplane = ImageIO.read(new FileInputStream("/home/dujianjian/blog/bigplane.png"));    
+        } catch (IOException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+        }  */
+    } 
+    public Flyer[] flyers = {}; //存储所有飞机的数组
+    //定义游戏状态：当前状态变量：默认为开始状态  
+    private int state = START;  
+    //定义游戏状态的备选项常量：  
+    public static final int START = 0;  
+    public static final int RUNNING = 1;  
+    public static final int PAUSE = 2;  
+    public static final int GAME_OVER = 3;  
+    
+    /*
+     * add函数
+     */
 	public void add(Component c,GridBagConstraints con,int x,int y,int w,int h){
 		con.gridx=x;
 		con.gridy=y;
@@ -28,6 +67,29 @@ public class Show extends JPanel{
 		con.gridheight=h;
 		add(c,con);
 	}
+	 /*@Override  
+	public void paint(Graphics g) {  
+        //step1: 绘制背景图片  
+        g.drawImage(background, 0, 0, null);  
+        //step2: 绘制英雄机  
+       paintHero(g);  
+        //step3: 批量绘制敌人数组  
+        paintFlyers(g);  
+        //step4: 批量绘制子弹数组  
+        paintBullets(g);  
+        //绘制分数和生命值  
+        paintScore_Life(g);  
+          
+        //根据游戏状态绘制不同图片  
+        if(state == START){  
+            g.drawImage(start, 0, 0, null);  
+        }else if(state == PAUSE){  
+            g.drawImage(pause, 0, 0, null);  
+        }else if(state == GAME_OVER){  
+            g.drawImage(gameover, 0, 0, null);  
+        }  
+          
+    }  */
     public Show(){
     	JFrame jf=new JFrame("无人机任务规划仿真系统");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
