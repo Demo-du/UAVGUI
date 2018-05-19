@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,13 +17,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Show extends JPanel{
+public class Show extends HomePanel{
+	ImageIcon icon;  
+    Image img; 
 	public String str="";
 	public static JTextArea tx;
 	public static int WIDTH=600;
@@ -32,6 +36,7 @@ public class Show extends JPanel{
 	public static BufferedImage background; //背景图片  
 	public static BufferedImage bigplane; //飞机图片
 	//静态块，在类加载到方法区时执行一次，专门加载静态资源  
+	
     static{  
         /* 
          * java从硬盘中加载图片到内存中： 
@@ -40,8 +45,9 @@ public class Show extends JPanel{
          * ShootGame.class:获得当前类的加载器所在路径 
          * ShootGame.class.getRerource("文件名"); 从当前类所在路径加载指定文件到程序中 
          */  
-      /*  try {  
-            background = ImageIO.read(new File("/home/dujianjian/blog/background.png"));  
+    	
+       /* try {  
+            background = ImageIO.read(new FileInputStream("/home/dujianjian/blog/background.png"));  
             bigplane = ImageIO.read(new FileInputStream("/home/dujianjian/blog/bigplane.png"));    
         } catch (IOException e) {  
             // TODO Auto-generated catch block  
@@ -67,8 +73,8 @@ public class Show extends JPanel{
 		con.gridheight=h;
 		add(c,con);
 	}
-	 /*@Override  
-	public void paint(Graphics g) {  
+	/*@Override  
+	 public void paint(Graphics g) {  
         //step1: 绘制背景图片  
         g.drawImage(background, 0, 0, null);  
         //step2: 绘制英雄机  
@@ -90,7 +96,15 @@ public class Show extends JPanel{
         }  
           
     }  */
+	/*public void paintComponent(Graphics g) {  
+        super.paintComponent(g);  
+        //下面这行是为了背景图片可以跟随窗口自行调整大小，可以自己设置成固定大小  
+        g.drawImage(img, 0, 0,this.getWidth(), this.getHeight(), this);  
+    }  */
     public Show(){
+    //	this.setOpaque(false);
+    //  /img/HomeImg.jpg 是存放在你正在编写的项目的bin文件夹下的img文件夹下的一个图片  
+        
     	JFrame jf=new JFrame("无人机任务规划仿真系统");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout lay=new GridBagLayout();
