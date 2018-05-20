@@ -25,7 +25,7 @@ public class Choose1 extends JPanel{
 	}
 	public Choose1(){
 		final JFrame jf=new JFrame("仿真选择");
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		GridBagLayout lay=new GridBagLayout();
 		setLayout(lay);
 		jf.add(this,BorderLayout.WEST);

@@ -43,6 +43,7 @@ public class Dongtu extends JPanel{
             	runTimes++;
             	if(runTimes%100==0){
             		runTimes=0;
+            		 
             		for(Flyer i:flys){
             			i.step();
             			repaint();  
@@ -125,7 +126,6 @@ public class Dongtu extends JPanel{
         frame.setSize(FRAME_WIDTH,FRAME_HEIGHT);//(336, 607);  
         frame.setAlwaysOnTop(true); //设置窗体置顶  
         //设置窗体关闭同时，退出程序  
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         frame.setLocationRelativeTo(null); //设置窗体的位置，null表示居中  
           
         /*在窗体中嵌入背景面板对象——JPanel*/  
