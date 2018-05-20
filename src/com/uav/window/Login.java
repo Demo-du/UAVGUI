@@ -63,6 +63,7 @@ public class Login extends JPanel{
 				//System.out.println("sssss");
 				jf.dispose();
 				new Show();
+				
 			}
 			
 		});

@@ -163,7 +163,6 @@ public class Show extends HomePanel{
 			
 		});
 		b2.addActionListener(new ActionListener(){
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				str="侦查任务规划仿真开始==========================";
@@ -176,6 +175,7 @@ public class Show extends HomePanel{
 				str+='\n'+"侦查任务规划仿真结束==========================";
 				//str+='\n'+"ss";
 				tx.setText(str);
+				new Dongtu();
 				//new Choose1();
 			}
 			
