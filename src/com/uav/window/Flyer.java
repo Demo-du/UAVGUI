@@ -20,7 +20,7 @@ public class Flyer {
     	    cnt++;
     	this.x=list.get(cnt).x;
     	this.y=list.get(cnt).y;
-    	System.out.print(x+","+y+" ");
+    	//System.out.print(x+","+y+" ");
     }
     public ArrayList<Target> cal(ArrayList<Target> list){
     	ArrayList<Target> res=new ArrayList<Target>();
