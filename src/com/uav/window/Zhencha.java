@@ -45,9 +45,9 @@ public class Zhencha extends JPanel{
 		jf.setLocation(x, y);
 		//========================================//
 		Vector v=new Vector();
-		v.add("矩形");
-		v.add("点状");
-		v.add("线状");
+		v.add("有云");
+		v.add("白天晴朗");
+		v.add("黑夜晴朗");
 		JComboBox com=new JComboBox(v);
 		//com.setBorder(BorderFactory.createTitledBorder("目标形状"));
 		JButton b1=new JButton("确定");
@@ -57,7 +57,7 @@ public class Zhencha extends JPanel{
 		JLabel L2=new JLabel(" UAV飞行速度(km/h)");
 		JLabel L3=new JLabel("目标坐标x");
 		JLabel L4=new JLabel("目标坐标y");
-		JLabel L5=new JLabel("目标形状");
+		JLabel L5=new JLabel("目标环境");
 		JLabel tm1=new JLabel("   ");
 		JLabel tm2=new JLabel("   ");
 		JLabel tm3=new JLabel("   ");
